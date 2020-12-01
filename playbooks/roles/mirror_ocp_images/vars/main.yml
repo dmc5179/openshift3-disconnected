@@ -1,2 +1,7 @@
 ---
 # vars file for mirror_ocp_images
+
+pip_args: ''
+
+cluster_images:
+  - apb-base

@@ -1,0 +1,9 @@
+---
+
+- name: Load image from archive and push to a private registry
+  community.general.docker_image:
+    name: localhost:5000/myimages/sinatra
+    tag: v1
+    push: yes
+    load_path: my_sinatra.tar
+    source: load

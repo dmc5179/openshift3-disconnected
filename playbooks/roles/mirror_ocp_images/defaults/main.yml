@@ -1,2 +1,12 @@
 ---
 # defaults file for mirror_ocp_images
+
+mirror_base: '/opt/openshift'
+
+run_as_root: false
+
+#pip_cmd: pip2
+
+pull_secret: '/home/ec2-user/auth.json'
+
+ocp_ver: '3.11.318'
