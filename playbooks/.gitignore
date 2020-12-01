@@ -1,0 +1,3 @@
+ansible.log
+*.mine
+group_vars/all/infra/all.yml
