@@ -19,7 +19,7 @@
         if ! test -e "{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
         then
           skopeo copy --authfile "{{ pull_secret }}" \
-            "docker://registry.redhat.io/openshift3/{{ item }}:v{{ ocp_ver }}" "docker-archive://{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
+            "docker://registry.redhat.io/openshift3/{{ item }}" "docker-archive://{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
 
         fi
 
