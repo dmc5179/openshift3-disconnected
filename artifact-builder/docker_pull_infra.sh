@@ -2,11 +2,11 @@
 set -x
 set -e
 
-OCP_VERSION=v3.11.117
+OCP_VERSION=v3.11.153-2
 DOCKER=podman
 SUDO=sudo
 
-${SUDO} ${DOCKER} pull registry.redhat.io/openshift3/ose-ansible:v3.11
+${SUDO} ${DOCKER} pull registry.redhat.io/openshift3/ose-ansible:v3.11.153-3
 ${SUDO} ${DOCKER} pull registry.redhat.io/openshift3/apb-base:${OCP_VERSION}
 ${SUDO} ${DOCKER} pull registry.redhat.io/openshift3/apb-tools:${OCP_VERSION}
 ${SUDO} ${DOCKER} pull registry.redhat.io/openshift3/automation-broker-apb:${OCP_VERSION}
