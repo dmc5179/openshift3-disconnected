@@ -1,0 +1,96 @@
+---
+# vars file for mirror_ocp_images
+
+pip_args: ''
+
+cluster_images:
+  - apb-base
+  - ose-ansible:v3.11
+  - apb-base:v{{ ocp_ver }}
+  - apb-tools:v{{ ocp_ver }}
+  - automation-broker-apb:v{{ ocp_ver }}
+  - csi-attacher:v{{ ocp_ver }}
+  - csi-driver-registrar:v{{ ocp_ver }}
+  - csi-livenessprobe:v{{ ocp_ver }}
+  - csi-provisioner:v{{ ocp_ver }}
+  - grafana:v{{ ocp_ver }}
+  - local-storage-provisioner:v{{ ocp_ver }}
+  - manila-provisioner:v{{ ocp_ver }}
+  - mariadb-apb:v{{ ocp_ver }}
+  - mediawiki:v{{ ocp_ver }}
+  - mediawiki-apb:v{{ ocp_ver }}
+  - mysql-apb:v{{ ocp_ver }}
+  - ose-ansible-service-broker:v{{ ocp_ver }}
+  - ose-cli:v{{ ocp_ver }}
+  - ose-cluster-autoscaler:v{{ ocp_ver }}
+  - ose-cluster-capacity:v{{ ocp_ver }}
+  - ose-cluster-monitoring-operator:v{{ ocp_ver }}
+  - ose-console:v{{ ocp_ver }}
+  - ose-configmap-reloader:v{{ ocp_ver }}
+  - ose-control-plane:v{{ ocp_ver }}
+  - ose-deployer:v{{ ocp_ver }}
+  - ose-descheduler:v{{ ocp_ver }}
+  - ose-docker-builder:v{{ ocp_ver }}
+  - ose-docker-registry:v{{ ocp_ver }}
+  - ose-efs-provisioner:v{{ ocp_ver }}
+  - ose-egress-dns-proxy:v{{ ocp_ver }}
+  - ose-egress-http-proxy:v{{ ocp_ver }}
+  - ose-egress-router:v{{ ocp_ver }}
+  - ose-haproxy-router:v{{ ocp_ver }}
+  - ose-hyperkube:v{{ ocp_ver }}
+  - ose-hypershift:v{{ ocp_ver }}
+  - ose-keepalived-ipfailover:v{{ ocp_ver }}
+  - ose-kube-rbac-proxy:v{{ ocp_ver }}
+  - ose-kube-state-metrics:v{{ ocp_ver }}
+  - ose-metrics-server:v{{ ocp_ver }}
+  - ose-node:v{{ ocp_ver }}
+  - ose-node-problem-detector:v{{ ocp_ver }}
+  - ose-operator-lifecycle-manager:v{{ ocp_ver }}
+  - ose-ovn-kubernetes:v{{ ocp_ver }}
+  - ose-pod:v{{ ocp_ver }}
+  - ose-prometheus-config-reloader:v{{ ocp_ver }}
+  - ose-prometheus-operator:v{{ ocp_ver }}
+  - ose-recycler:v{{ ocp_ver }}
+  - ose-service-catalog:v{{ ocp_ver }}
+  - ose-template-service-broker:v{{ ocp_ver }}
+  - ose-tests:v{{ ocp_ver }}
+  - ose-web-console:v{{ ocp_ver }}
+  - postgresql-apb:v{{ ocp_ver }}
+  - registry-console:v{{ ocp_ver }}
+  - snapshot-controller:v{{ ocp_ver }}
+  - snapshot-provisioner:v{{ ocp_ver }}
+# - registry.redhat.io/rhel7/etcd:3.2.22
+
+
+
+optional_images:
+ - registry.redhat.io/openshift3/metrics-cassandra:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/metrics-hawkular-metrics:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/metrics-hawkular-openshift-agent:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/metrics-heapster:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/metrics-schema-installer:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/oauth-proxy:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/ose-logging-curator5:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/ose-logging-elasticsearch5:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/ose-logging-eventrouter:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/ose-logging-fluentd:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/ose-logging-kibana5:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/prometheus:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/prometheus-alertmanager:v{{ ocp_ver }}
+ - registry.redhat.io/openshift3/prometheus-node-exporter:v{{ ocp_ver }}
+ - registry.redhat.io/cloudforms46/cfme-openshift-postgresql
+ - registry.redhat.io/cloudforms46/cfme-openshift-memcached
+ - registry.redhat.io/cloudforms46/cfme-openshift-app-ui
+ - registry.redhat.io/cloudforms46/cfme-openshift-app
+ - registry.redhat.io/cloudforms46/cfme-openshift-embedded-ansible
+ - registry.redhat.io/cloudforms46/cfme-openshift-httpd
+ - registry.redhat.io/cloudforms46/cfme-httpd-configmap-generator
+ - registry.redhat.io/rhgs3/rhgs-server-rhel7
+ - registry.redhat.io/rhgs3/rhgs-volmanager-rhel7
+ - registry.redhat.io/rhgs3/rhgs-gluster-block-prov-rhel7
+ - registry.redhat.io/rhgs3/rhgs-s3-server-rhel7
+
+
+additional_images:
+ - registry.redhat.io/openshift3/ose-efs-provisioner:v{{ ocp_ver }}
+
