@@ -10,3 +10,5 @@ run_as_root: false
 pull_secret: '/home/ec2-user/auth.json'
 
 ocp_ver: '3.11.318'
+
+cleanup_local_images: false

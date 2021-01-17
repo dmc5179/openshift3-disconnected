@@ -1,28 +1,38 @@
 ---
 
-- name: Create directory for image archives
-  file:
-    path: '{{ mirror_base }}/images/infrastructure'
-    state: directory
+#- name: Create directory for image archives
+#  file:
+#    path: '{{ mirror_base }}/images/infrastructure'
+#    state: directory
 
-#- name: Ensure skopeo is installed
+#- name: Ensure podman is installed
 #  become: true
 #  package:
-#    name: skopeo
+#    name: podman
 #    state: present
 
-- name: Pull OpenShift {{ ocp_ver }} images
-  become: true
-  shell:
-    cmd: |
-
-        if ! test -e "{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
-        then
-          skopeo copy --authfile "{{ pull_secret }}" \
-            "docker://registry.redhat.io/openshift3/{{ item }}" "docker-archive://{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
-
-        fi
-
-    executable: /bin/bash
+- name: Create Image Archives
+  include_tasks: docker_archive_image.yml
+  vars:
+    image_name: '{{ item }}'
+#    image_name: '{{ item.name }}'
+#    image_repo: '{{ item.repo }}'
+#    image_tag: '{{ item.tag }}'
   with_items:
     - '{{ cluster_images }}'
+
+#- name: Pull OpenShift {{ ocp_ver }} images
+#  become: true
+#  shell:
+#    cmd: |
+#
+#        if ! test -e "{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
+#        then
+#          skopeo copy --authfile "{{ pull_secret }}" \
+#            "docker://registry.redhat.io/openshift3/{{ item }}" "docker-archive://{{ mirror_base }}/images/infrastructure/openshift3_{{ item }}_{{ ocp_ver }}.tar"
+#
+#        fi
+#
+#    executable: /bin/bash
+#  with_items:
+#    - '{{ cluster_images }}'

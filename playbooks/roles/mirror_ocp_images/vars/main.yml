@@ -3,65 +3,65 @@
 
 pip_args: ''
 
+reg: 'registry.redhat.io/openshift3'
+
 cluster_images:
-  - apb-base
-  - ose-ansible:v3.11
-  - apb-base:v{{ ocp_ver }}
-  - apb-tools:v{{ ocp_ver }}
-  - automation-broker-apb:v{{ ocp_ver }}
-  - csi-attacher:v{{ ocp_ver }}
-  - csi-driver-registrar:v{{ ocp_ver }}
-  - csi-livenessprobe:v{{ ocp_ver }}
-  - csi-provisioner:v{{ ocp_ver }}
-  - grafana:v{{ ocp_ver }}
-  - local-storage-provisioner:v{{ ocp_ver }}
-  - manila-provisioner:v{{ ocp_ver }}
-  - mariadb-apb:v{{ ocp_ver }}
-  - mediawiki:v{{ ocp_ver }}
-  - mediawiki-apb:v{{ ocp_ver }}
-  - mysql-apb:v{{ ocp_ver }}
-  - ose-ansible-service-broker:v{{ ocp_ver }}
-  - ose-cli:v{{ ocp_ver }}
-  - ose-cluster-autoscaler:v{{ ocp_ver }}
-  - ose-cluster-capacity:v{{ ocp_ver }}
-  - ose-cluster-monitoring-operator:v{{ ocp_ver }}
-  - ose-console:v{{ ocp_ver }}
-  - ose-configmap-reloader:v{{ ocp_ver }}
-  - ose-control-plane:v{{ ocp_ver }}
-  - ose-deployer:v{{ ocp_ver }}
-  - ose-descheduler:v{{ ocp_ver }}
-  - ose-docker-builder:v{{ ocp_ver }}
-  - ose-docker-registry:v{{ ocp_ver }}
-  - ose-efs-provisioner:v{{ ocp_ver }}
-  - ose-egress-dns-proxy:v{{ ocp_ver }}
-  - ose-egress-http-proxy:v{{ ocp_ver }}
-  - ose-egress-router:v{{ ocp_ver }}
-  - ose-haproxy-router:v{{ ocp_ver }}
-  - ose-hyperkube:v{{ ocp_ver }}
-  - ose-hypershift:v{{ ocp_ver }}
-  - ose-keepalived-ipfailover:v{{ ocp_ver }}
-  - ose-kube-rbac-proxy:v{{ ocp_ver }}
-  - ose-kube-state-metrics:v{{ ocp_ver }}
-  - ose-metrics-server:v{{ ocp_ver }}
-  - ose-node:v{{ ocp_ver }}
-  - ose-node-problem-detector:v{{ ocp_ver }}
-  - ose-operator-lifecycle-manager:v{{ ocp_ver }}
-  - ose-ovn-kubernetes:v{{ ocp_ver }}
-  - ose-pod:v{{ ocp_ver }}
-  - ose-prometheus-config-reloader:v{{ ocp_ver }}
-  - ose-prometheus-operator:v{{ ocp_ver }}
-  - ose-recycler:v{{ ocp_ver }}
-  - ose-service-catalog:v{{ ocp_ver }}
-  - ose-template-service-broker:v{{ ocp_ver }}
-  - ose-tests:v{{ ocp_ver }}
-  - ose-web-console:v{{ ocp_ver }}
-  - postgresql-apb:v{{ ocp_ver }}
-  - registry-console:v{{ ocp_ver }}
-  - snapshot-controller:v{{ ocp_ver }}
-  - snapshot-provisioner:v{{ ocp_ver }}
-# - registry.redhat.io/rhel7/etcd:3.2.22
-
-
+  - '{{ reg }}/apb-base:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-ansible:v3.11'
+  - '{{ reg }}/apb-base:v{{ ocp_ver }}'
+  - '{{ reg }}/apb-tools:v{{ ocp_ver }}'
+  - '{{ reg }}/automation-broker-apb:v{{ ocp_ver }}'
+  - '{{ reg }}/csi-attacher:v{{ ocp_ver }}'
+  - '{{ reg }}/csi-driver-registrar:v{{ ocp_ver }}'
+  - '{{ reg }}/csi-livenessprobe:v{{ ocp_ver }}'
+  - '{{ reg }}/csi-provisioner:v{{ ocp_ver }}'
+  - '{{ reg }}/grafana:v{{ ocp_ver }}'
+  - '{{ reg }}/local-storage-provisioner:v{{ ocp_ver }}'
+  - '{{ reg }}/manila-provisioner:v{{ ocp_ver }}'
+  - '{{ reg }}/mariadb-apb:v{{ ocp_ver }}'
+  - '{{ reg }}/mediawiki:v{{ ocp_ver }}'
+  - '{{ reg }}/mediawiki-apb:v{{ ocp_ver }}'
+  - '{{ reg }}/mysql-apb:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-ansible-service-broker:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-cli:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-cluster-autoscaler:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-cluster-capacity:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-cluster-monitoring-operator:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-console:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-configmap-reloader:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-control-plane:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-deployer:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-descheduler:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-docker-builder:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-docker-registry:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-efs-provisioner:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-egress-dns-proxy:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-egress-http-proxy:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-egress-router:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-haproxy-router:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-hyperkube:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-hypershift:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-keepalived-ipfailover:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-kube-rbac-proxy:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-kube-state-metrics:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-metrics-server:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-node:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-node-problem-detector:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-operator-lifecycle-manager:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-ovn-kubernetes:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-pod:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-prometheus-config-reloader:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-prometheus-operator:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-recycler:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-service-catalog:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-template-service-broker:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-tests:v{{ ocp_ver }}'
+  - '{{ reg }}/ose-web-console:v{{ ocp_ver }}'
+  - '{{ reg }}/postgresql-apb:v{{ ocp_ver }}'
+  - '{{ reg }}/registry-console:v{{ ocp_ver }}'
+  - '{{ reg }}/snapshot-controller:v{{ ocp_ver }}'
+  - '{{ reg }}/snapshot-provisioner:v{{ ocp_ver }}'
+  - '{{ reg }}/registry.redhat.io/rhel7/etcd:3.2.22'
 
 optional_images:
  - registry.redhat.io/openshift3/metrics-cassandra:v{{ ocp_ver }}

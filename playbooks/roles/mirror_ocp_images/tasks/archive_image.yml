@@ -1,0 +1,39 @@
+---
+
+#- name: Pull Image
+#  podman_image:
+#    name: '{{ image_repo }}/{{ image_name }}'
+#    tag: '{{ image_tag }}'
+#    pull: true
+#    state: present
+
+- name: Archive Image
+  podman_image:
+#    name: '{{ image_repo }}/{{ image_name }}'
+#    tag: '{{ image_tag }}'
+    name: 'registry.redhat.io/openshift3/apb-base'
+    tag: 'v3.11.318'
+    push: true
+    pull: false
+    push_args:
+      #compress: true
+#      dest: '{{ image_name }}_{{ image_tag }}.tar'
+      dest: 'apb-base.tar'
+      transport: 'docker-archive'
+
+- name: Remove Image from local images
+  podman_image:
+    name: '{{ image_repo }}/{{ image_name }}'
+    tag: '{{ image_tag }}'
+    state: absent
+  when: ( cleanup_local_podman | bool )
+
+- name: Copy Image Archive to Dest
+  copy:
+    src: '{{ image_name }}_{{ image_tag }}.tar'
+    dest: '{{ mirror_base }}/images/infrastructure/{{ image_name }}_{{ image_tag }}.tar'
+
+- name: Remove Image copy
+  file:
+    path: '{{ image_name }}_{{ image_tag }}.tar'
+    state: absent
