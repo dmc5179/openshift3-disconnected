@@ -1,2 +1,29 @@
 ---
 # tasks file for mirror_rpms
+
+- name: Create directory for RPM Repos
+  become: true
+  file:
+    path: '{{ mirror_base }}/ocp-{{ ocp_ver }}/repos'
+    state: directory
+
+- name: Install required packages
+  become: true
+  package:
+    name: '{{ rpm_deps }}'
+    state: present
+
+- name: Enable OpenShift 3 repositories
+  become: true
+  community.general.rhsm_repository:
+    name: '{{ item }}'
+  with_items:
+    - '{{ rpm_repos }}'
+
+- name: Mirror RPMs
+  become: true
+  reposync:
+    repo: 'rhel-8-for-x86_64-baseos-rpms'
+    dest: '{{ mirror_base }}/ocp-{{ ocp_ver }}/repos'
+    metadata: true
+    newest_only: true

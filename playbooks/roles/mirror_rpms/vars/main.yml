@@ -1,2 +1,12 @@
 ---
 # vars file for mirror_rpms
+
+rpm_repos:
+  - "rhel-7-server-rpms"
+  - "rhel-7-server-extras-rpms"
+  - "rhel-7-server-ose-3.11-rpms"
+  - "rhel-7-server-ansible-2.9-rpm"
+
+rpm_deps:
+  - 'dnf-utils'
+  - 'createrepo_c'
