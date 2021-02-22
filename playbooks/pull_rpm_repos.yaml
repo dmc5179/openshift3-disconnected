@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: false
+  become: false
+  tasks:
+
+    - name: Mirror OpenShift 3 Required RPM repos
+      import_role:
+        name: mirror_rpms
+
