@@ -1,3 +1,17 @@
 ---
 
 
+mirror_base: '/opt/openshift'
+
+run_as_root: false
+
+pip_cmd: pip3
+
+pull_secret: '/var/run/user/1000/containers/auth.json'
+
+ocp_ver: '3.11.380'
+
+cleanup_local_images: false
+
+podman: false
+docker: true
