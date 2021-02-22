@@ -5,10 +5,13 @@ mirror_base: '/opt/openshift'
 
 run_as_root: false
 
-#pip_cmd: pip2
+pip_cmd: pip3
 
 pull_secret: '/home/ec2-user/auth.json'
 
 ocp_ver: '3.11.318'
 
 cleanup_local_images: false
+
+podman: false
+docker: true
