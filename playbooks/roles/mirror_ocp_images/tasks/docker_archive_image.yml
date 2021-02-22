@@ -1,11 +1,17 @@
 ---
 
+- name: check if {{ image_name }} archive exists
+  stat: 
+    path: "{{ mirror_base }}/ocp-{{ ocp_ver }}/images/infrastructure/{{ image_name | replace('/','-') | replace(':','_') }}.tar"
+  register: docker_archive
+
 - name: Archive {{ image_name }}
   docker_image:
     name: "{{ image_name.split(':')[0] }}"
     tag: "{{ image_name.split(':')[1] }}"
-    archive_path: "{{ mirror_base }}/images/infrastructure/{{ image_name | replace('/','-') | replace(':','_') }}.tar"
+    archive_path: "{{ mirror_base }}/ocp-{{ ocp_ver }}/images/infrastructure/{{ image_name | replace('/','-') | replace(':','_') }}.tar"
     source: pull
+  when: docker_archive.stat.exists == False
 
 #- name: Remove Image from local images
 #  podman_image:
