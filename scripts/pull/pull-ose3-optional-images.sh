@@ -7,20 +7,20 @@ source "${SCRIPT_DIR}/../env.sh"
 
 set -x -e
 
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-cassandra:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-hawkular-metrics:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-hawkular-openshift-agent:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-heapster:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-schema-installer:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/oauth-proxy:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-curator5:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-elasticsearch5:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-eventrouter:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-fluentd:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-kibana5:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/prometheus:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/prometheus-alertmanager:${TAG}
-${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/prometheus-node-exporter:${TAG}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-cassandra:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-hawkular-metrics:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-hawkular-openshift-agent:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-heapster:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/metrics-schema-installer:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/oauth-proxy:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-curator5:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-elasticsearch5:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-eventrouter:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-fluentd:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/ose-logging-kibana5:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/prometheus:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/prometheus-alertmanager:${OCP_VERSION}
+${SUDO} ${RUNTIME} pull registry.redhat.io/openshift3/prometheus-node-exporter:${OCP_VERSION}
 ${SUDO} ${RUNTIME} pull registry.redhat.io/cloudforms46/cfme-openshift-postgresql
 ${SUDO} ${RUNTIME} pull registry.redhat.io/cloudforms46/cfme-openshift-memcached
 ${SUDO} ${RUNTIME} pull registry.redhat.io/cloudforms46/cfme-openshift-app-ui
