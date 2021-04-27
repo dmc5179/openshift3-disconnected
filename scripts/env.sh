@@ -11,3 +11,4 @@ SUDO=
 # Directory to save OpenShift 3 image archives
 LOCATION="/opt/openshift/ocp-${OCP_VERSION}"
 
+PACKAGE_MANAGER="dnf"
